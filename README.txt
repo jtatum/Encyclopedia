@@ -1,3 +1,4 @@
+Copyright (c) 2011, James Tatum
 Copyright (c) 2006-2007, Dennis Kaarsemaker
 
 This program is free software; you can redistribute it and/or modify
@@ -8,6 +9,14 @@ This program is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
+
+This is a fork of the Ubuntu bots Encyclopedia plugin. Visit their awesome
+project at https://launchpad.net/ubuntu-bots and http://ubottu.com/
+
+Changes from Ubuntu Encyclopedia:
+
+* Anyone can edit
+  Authentication for updating factoids is disabled.
 
 This plugin used to have package lookup, this was mooved to the PackageInfo
 plugin.
