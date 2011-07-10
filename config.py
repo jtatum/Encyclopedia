@@ -80,6 +80,7 @@ def configure(advanced):
         alert.add(name.lower())
     remotedb = anything("Location of a remote database to sync with (used with @sync)", default=Encyclopedia.remotedb._default)
     privateNotFound = yn("Should the bot reply in private when a factoid is not found, as opposed to in the channel?", default=Encyclopedia.privateNotFound._default)
+    ignorePrefix = yn('Should the bot respond to factoids whether or not its nick or the prefix character is mentioned?', default=Encyclopedia.ignorePrefix._default)
 
     Encyclopedia.enabled.setValue(enabled)
     Encyclopedia.datadir.setValue(datadir)
@@ -99,6 +100,7 @@ def configure(advanced):
     Encyclopedia.notfoundmsg.setValue(notfoundmsg)
     Encyclopedia.alert.setValue(alert)
     Encyclopedia.privateNotFound.setValue(privateNotFound)
+    Encyclopedia.ignorePrefix.setValue(ignorePrefix)
 
     # Create the initial database
     db_dir = Encyclopedia.datadir()
@@ -182,6 +184,9 @@ conf.registerChannelValue(Encyclopedia, 'ignores',
 
 conf.registerChannelValue(Encyclopedia, 'privateNotFound',
     registry.Boolean(False, "If set to True, send notfoundmsg in private rather than in the channel"))
+
+conf.registerChannelValue(Encyclopedia, 'ignorePrefix',
+    registry.Boolean(False, 'If True, this setting will try to match factoids and edits from regular channel text, regardless of whether the bot nick or prefix character is mentioned or not.'))
 
 conf.registerChannelValue(Encyclopedia, 'forcedFactoid',
     registry.Boolean(False, "If True, factoids in kick's reason will be sent to the user in private"))

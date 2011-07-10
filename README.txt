@@ -17,6 +17,10 @@ Changes from Ubuntu Encyclopedia:
 
 * Anyone can edit
   Authentication for updating factoids is disabled.
+* ignorePrefix config option
+  Old-timey robots would just pick up factoids from thin air and respond
+  when they found a match. Replicate this behavior with this channel-specific
+  setting.
 
 This plugin used to have package lookup, this was mooved to the PackageInfo
 plugin.
