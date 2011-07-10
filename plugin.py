@@ -473,12 +473,6 @@ class Encyclopedia(callbacks.Plugin):
             retmsg = term[2]
         elif beginswith(lower_text, self.registryValue('ignores', channel)): # Make sure ignores can ignore these built-in "facts"
             return
-        elif term[0] == "seen" or term[0].startswith("seen "): # Some people expect a '!seen <nick>' command
-            ret = "I have no seen command"
-            retmsg = term[2] and "%s: " % msg.prefix.split('!', 1)[0] or '' # Redirect back at the caller, rather than the target
-        elif term[0].startswith("google "): # Some poeple expect a '!google <term...>' command
-            ret = "I have no google command, use http://www.google.com/"
-            retmsg = term[2] and "%s: " % msg.prefix.split('!', 1)[0] or '' # Redirect back at the caller, rather than the taget
         elif term[0] in ("what", "whats", "what's") or term[0].startswith("what ") or term[0].startswith("what ") or term[0].startswith("whats ") or term[0].startswith("what's "): # Try and catch people saying "ubottu: what is ...?"
             ret = "I am only a bot, please don't think I'm intelligent :)"
             retmsg = term[2]
