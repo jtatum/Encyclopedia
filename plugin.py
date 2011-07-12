@@ -474,7 +474,7 @@ class Encyclopedia(callbacks.Plugin):
         elif beginswith(lower_text, self.registryValue('ignores', channel)): # Make sure ignores can ignore these built-in "facts"
             return
         elif term[0] in ("what", "whats", "what's") or term[0].startswith("what ") or term[0].startswith("what ") or term[0].startswith("whats ") or term[0].startswith("what's "): # Try and catch people saying "ubottu: what is ...?"
-            ret = "I am only a bot, please don't think I'm intelligent :)"
+            ret = "I suck balls"
             retmsg = term[2]
         else:
             # Lookup, search or edit?
@@ -497,7 +497,7 @@ class Encyclopedia(callbacks.Plugin):
                         or channel in self.registryValue('editchannel') \
                         and capab(msg.prefix, 'restricted-editor')):
                     if len(text[:text.find('is')]) > 15:
-                        irc.error("I am only a bot, please don't think I'm intelligent :)")
+                        irc.error("I suck balls")
                     else:
                         irc.reply("Your edit request has been forwarded to %s.  Thank you for your attention to detail" %
                                   self.registryValue('relaychannel',channel),private=True)
@@ -514,7 +514,7 @@ class Encyclopedia(callbacks.Plugin):
 
         if not ret:
             if len(text) > 15:
-                irc.error("I am only a bot, please don't think I'm intelligent :)")
+                irc.error("I suck balls")
                 return
             retmsg = ''
             ret = self.registryValue('notfoundmsg')
